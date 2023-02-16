@@ -20,48 +20,15 @@ public abstract class Human implements GameInterface {
         this.speed = speed;
     }
 
-    public String getName() { return this.name; }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getHp() {
-        return this.hp;
-    }
-
-    public void setHp(Integer hp) {
-        this.hp = hp;
-    }
 
     public Integer getAttack() {
-        return this.attack;
+        return attack;
     }
+    public Integer getProtection() { return protection; }
+    public Integer getDamage() { return damage; }
 
-    public void setAttack(Integer attack) {
-        this.attack = attack;
-    }
-
-    public Integer getProtection() {
-        return this.protection;
-    }
-
-    public void setProtection(Integer secrecy) {
-        this.protection = secrecy;
-    }
-
-    public Integer getSpeed() {
-        return this.speed;
-    }
-
-    public void setSpeed(Integer speed) {
-        this.speed = speed;
-    }
-
-    public String getInfo() {
-        return "   ";
-    }
-
+    @Override
     public void step(int a) {
+
     }
 }

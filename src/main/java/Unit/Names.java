@@ -1,13 +1,14 @@
 package Unit;
 
 public enum Names {
-        Natali,
-        Rik,
-        Ivan,
+        Nata,
+        Riki,
+        Mike,
         Kate,
         Dima,
-        Volodya,
-        Fedya;
+        Vika,
+        Oleg
+        ;
 
         private Names() {
         }

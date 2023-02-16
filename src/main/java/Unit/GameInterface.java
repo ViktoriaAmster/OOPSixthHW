@@ -1,7 +1,7 @@
 package Unit;
 
 public interface GameInterface {
-    String getInfo();
+    StringBuilder getInfo();
 
-    void step(int var1);
+    void step(int x);
 }
