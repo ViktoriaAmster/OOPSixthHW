@@ -3,21 +3,27 @@ package Unit;
 public abstract class Human implements GameInterface {
 
     protected String name;
-    protected Integer hp;
+    protected Float hp;
     protected Integer maxHp;
     protected Integer attack;
-    protected Integer damage;
+    protected Integer minDamage;
+    protected Integer maxDamage;
     protected Integer protection;
     protected Integer speed;
+    protected Integer posX;
+    protected Integer posY;
 
-    public Human(String name, Integer hp, Integer maxHp, Integer attack, Integer damage, Integer protection, Integer speed) {
+
+    public Human(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage, Integer protection, Integer speed) {
         this.name = name;
         this.hp = hp;
         this.maxHp = maxHp;
         this.attack = attack;
-        this.damage = damage;
+        this.minDamage = minDamage;
+        this.maxDamage = maxDamage;
         this.protection = protection;
         this.speed = speed;
+
     }
 
 
@@ -25,10 +31,14 @@ public abstract class Human implements GameInterface {
         return attack;
     }
     public Integer getProtection() { return protection; }
-    public Integer getDamage() { return damage; }
+//    public Integer getDamage() { return damage; }
 
     @Override
     public void step(int a) {
 
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 }

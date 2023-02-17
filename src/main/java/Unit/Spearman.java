@@ -1,11 +1,11 @@
 package Unit;
 
 public class Spearman extends Infantry{
-    public Spearman(String name, Integer hp, Integer maxHp, Integer attack, Integer damage, Integer protection, Integer speed) {
-        super(name, hp, maxHp, attack, damage, protection, speed);
+    public Spearman(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage, Integer protection) {
+        super(name, hp, maxHp, attack, minDamage, maxDamage, protection);
     }
 
-    public Spearman(String name) { super(name, 20,20,10, 9,5,1); }
+    public Spearman(String name) { super(name, 20.1f,20,10, 9,5, 7); }
 
     public void runAway() {    }
 
@@ -14,7 +14,8 @@ public class Spearman extends Infantry{
         StringBuilder builder = new StringBuilder();
         return builder.append("Копейщик: \t").append(Spearman.super.name)
                 .append("\t ATK: \t").append(Spearman.super.attack)
-                .append("\t HP: \t").append(Spearman.super.hp);
+                .append("\t HP: \t").append(Spearman.super.hp)
+                .append("\t Speed: \t").append(Spearman.super.speed);
     }
 
 }

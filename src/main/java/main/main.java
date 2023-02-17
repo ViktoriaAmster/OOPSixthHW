@@ -3,53 +3,77 @@ package main;
 import Unit.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class main {
     public static void main(String[] args) {
 
-        ArrayList<Human> humans = new ArrayList<>();
-        int units = 100;
+        ArrayList<Human> team1 = new ArrayList<>();
+        ArrayList<Human> team2 = new ArrayList<>();
+        ArrayList<Human> teams = new ArrayList<>();
+        createTeam(team1, 0, 4);
+        createTeam(team2, 3,7);
+        teams.addAll(team1);
+        teams.addAll(team2);
+        for (int i = 0; i < team1.size(); i++) {
+            System.out.println(team1.get(i).getInfo());
+        }
+        teams.sort(new Comparator<Human>() {
+            @Override
+            public int compare(Human o1, Human o2) {
+                return  o1.getSpeed() - o2.getSpeed();
+            }
+        });
+        System.out.println();
+        for (int i = 0; i < team2.size(); i++) {
+            System.out.println(team2.get(i).getInfo());
+        }
+        System.out.println();
+        for (int i = 0; i < teams.size(); i++) {
+            System.out.println(teams.get(i).getInfo());
+        }
+    }
 
+    public static void createTeam(ArrayList targetList, int start, int end) {
+        int units = 10;
         for (int i = 0; i < units; i++) {
-            int rnd = new Random().nextInt(1,8);
+            int rnd = new Random().nextInt(start, end);
             switch (rnd) {
+                case (0):
+                    targetList.add(new Sniper(getName()));
+                    break;
                 case (1):
-                    humans.add(new Farmer(getName()));
+                    targetList.add(new Witch(getName()));
                     break;
                 case (2):
-                    humans.add(new Bandit(getName()));
+                    targetList.add(new Bandit(getName()));
                     break;
                 case (3):
-                    humans.add(new Spearman(getName()));
+                    targetList.add(new Farmer(getName()));
                     break;
                 case (4):
-                    humans.add(new Sniper(getName()));
+                    targetList.add(new Crossbowman(getName()));
                     break;
                 case (5):
-                    humans.add(new Crossbowman(getName()));
+                    targetList.add(new Spearman(getName()));
                     break;
                 case (6):
-                    humans.add(new Monk(getName()));
-                    break;
-                case (7):
-                    humans.add(new Witch(getName()));
+                    targetList.add(new Monk(getName()));
                     break;
             }
         }
+    }
 
-        for (int i = 0; i < humans.size(); i++) {
-            System.out.println(humans.get(i).getInfo());
+        public static String getName (ArrayList list) {
+            String name = String.valueOf(Names.values()[new Random().nextInt(Names.values().length - 1)]);
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i). > 0){
+                        name += String.valueOf(new Random().nextInt(10));
+                    }
+                }
+            return name;
         }
-    }
 
-    public static String getName(){
-        String name = String.valueOf(Names.values()[new Random().nextInt(Names.values().length-1)]);
-    //    for (int i = 0; i < h.size(); i++) {
-    //        if (h.get(i).indexOf(name) > 0){
-    //            name += String.valueOf(new Random().nextInt(10));
-    //        }
-    //    }
-        return name;
-    }
 }
+

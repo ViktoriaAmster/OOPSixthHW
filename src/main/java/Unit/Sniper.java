@@ -3,13 +3,13 @@ package Unit;
 public class Sniper extends Shooter{
 
     public Sniper(String name) {
-        super(name, 150, 150, 10, 10, 5, 3, 10,
-                5);
+        super(name, 150.1f, 150, 10, 10, 5, 3, 4,
+                10, 5);
     }
 
-    public Sniper(String name, Integer hp, Integer maxHp, Integer attack, Integer damage, Integer protection, Integer speed,
-                  int cartridges, int range) {
-        super(name, hp, maxHp, attack, damage, protection, speed, cartridges, range);
+    public Sniper(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage,
+                  Integer protection, Integer speed, int cartridges, int range) {
+        super(name, hp, maxHp, attack, minDamage, maxDamage, protection, speed, cartridges, range);
     }
 
     @Override

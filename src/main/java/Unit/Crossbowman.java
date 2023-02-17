@@ -3,12 +3,14 @@ package Unit;
 public class Crossbowman extends Shooter{
 
     public Crossbowman(String name) {
-        super(name, 150, 150, 10, 10, 5, 3, 10, 5);
+        super(name, 150.1f, 150, 10, 10, 5, 3,
+                5,7,6);
     }
 
-    public Crossbowman(String name, Integer hp, Integer maxHp, Integer attack, Integer damage, Integer protection,
-                       Integer speed, int accuracy, int cartridges, int range) {
-        super(name, hp, maxHp, attack, damage, protection, speed, cartridges, range);
+
+    public Crossbowman(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage,
+                       Integer protection, Integer speed, int cartridges, int range) {
+        super(name, hp, maxHp, attack, minDamage, maxDamage, protection, speed, cartridges, range);
     }
 
     @Override
@@ -20,7 +22,8 @@ public class Crossbowman extends Shooter{
         return builder.append("Арбалет: \t").append(Crossbowman.super.name)
                 .append("\t ATK: \t").append(Crossbowman.super.attack)
                 .append("\t HP: \t").append(Crossbowman.super.hp)
-                .append("\t Arrows: ").append(Crossbowman.super.cartridges);
+                .append("\t Arrows: ").append(Crossbowman.super.cartridges)
+                .append("\t Speed: \t").append(Crossbowman.super.speed);
     }
 
 }
