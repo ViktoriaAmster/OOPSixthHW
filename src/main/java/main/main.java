@@ -10,6 +10,8 @@ public class main {
     public static void main(String[] args) {
 
         ArrayList<Human> team1 = new ArrayList<>();
+        team1.add(new Sniper("Boris"));
+        team1.add(new Crossbowman("Anna"));
         ArrayList<Human> team2 = new ArrayList<>();
         ArrayList<Human> teams = new ArrayList<>();
         createTeam(team1, 0, 4);
@@ -33,6 +35,12 @@ public class main {
         for (int i = 0; i < teams.size(); i++) {
             System.out.println(teams.get(i).getInfo());
         }
+        System.out.println(team1.get(0).getInfo());
+        team1.get(0).step();
+        System.out.println(team1.get(0).getInfo());
+        System.out.println(team1.get(1).getInfo());
+        team1.get(1).step();
+        System.out.println(team1.get(1).getInfo());
     }
 
     public static void createTeam(ArrayList targetList, int start, int end) {
@@ -65,13 +73,13 @@ public class main {
         }
     }
 
-        public static String getName (ArrayList list) {
+        public static String getName () {
             String name = String.valueOf(Names.values()[new Random().nextInt(Names.values().length - 1)]);
-                for (int i = 0; i < list.size(); i++) {
-                    if (list.get(i). > 0){
-                        name += String.valueOf(new Random().nextInt(10));
-                    }
-                }
+//                for (int i = 0; i < list.size(); i++) {
+//                    if (list.get(i). > 0){
+//                        name += String.valueOf(new Random().nextInt(10));
+//                    }
+//                }
             return name;
         }
 

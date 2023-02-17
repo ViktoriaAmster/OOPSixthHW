@@ -18,6 +18,11 @@ public class Witch extends Magic {
     }
 
     @Override
+    public void step() {
+
+    }
+
+    @Override
     public StringBuilder getInfo() {
         StringBuilder builder = new StringBuilder();
         return builder.append("Колдун: \t").append(Witch.super.name)

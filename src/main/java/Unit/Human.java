@@ -33,12 +33,10 @@ public abstract class Human implements GameInterface {
     public Integer getProtection() { return protection; }
 //    public Integer getDamage() { return damage; }
 
-    @Override
-    public void step(int a) {
-
-    }
-
     public int getSpeed() {
         return speed;
     }
+
+
+    public abstract void step();
 }

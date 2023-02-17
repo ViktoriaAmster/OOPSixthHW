@@ -25,4 +25,9 @@ public class Bandit extends Infantry{
                 .append("\t HP: \t").append(Bandit.super.hp)
                 .append("\t Speed: \t").append(Bandit.super.speed);
     }
+
+    @Override
+    public void step() {
+
+    }
 }

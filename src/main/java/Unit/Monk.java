@@ -29,4 +29,8 @@ public class Monk extends Magic {
 
     }
 
+    @Override
+    public void step() {
+
+    }
 }

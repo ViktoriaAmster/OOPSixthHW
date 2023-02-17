@@ -18,4 +18,8 @@ public class Spearman extends Infantry{
                 .append("\t Speed: \t").append(Spearman.super.speed);
     }
 
+    @Override
+    public void step() {
+
+    }
 }
