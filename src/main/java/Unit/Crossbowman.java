@@ -2,19 +2,10 @@ package Unit;
 
 public class Crossbowman extends Shooter{
 
-    public Crossbowman(String name) {
-        super(name, 150.1f, 150, 10, 10, 5, 3,
-                5,7,6);
+    public Crossbowman(String name,Vector2D position) {
+        super(name, 100f, 100, 10, 7, 15, 3,
+                5, position.posX, position.posY, 15,5);
     }
-
-
-    public Crossbowman(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage,
-                       Integer protection, Integer speed, int cartridges, int range) {
-        super(name, hp, maxHp, attack, minDamage, maxDamage, protection, speed, cartridges, range);
-    }
-
-    @Override
-    public Integer getAttack() { return attack; }
 
     @Override
     public StringBuilder getInfo() {
@@ -25,5 +16,8 @@ public class Crossbowman extends Shooter{
                 .append("\t Arrows: ").append(Crossbowman.super.cartridges)
                 .append("\t Speed: \t").append(Crossbowman.super.speed);
     }
+
+    @Override
+    public void step() {}
 
 }

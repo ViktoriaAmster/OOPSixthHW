@@ -1,29 +1,47 @@
 package Unit;
 
-public abstract class Shooter extends Human{
-    int cartridges;
-    int range;
+import java.util.ArrayList;
 
-    public Shooter(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage,
-                   Integer protection, Integer speed, int cartridges, int range) {
-        super(name, hp, maxHp, attack, minDamage, maxDamage, protection, speed);
+public abstract class Shooter extends Human {
+    protected int cartridges;
+    protected int range;
+
+    public Shooter(String name, float hp, int maxHp, int attack, int minDamage, int maxDamage, int protection,
+                   int speed, int posX, int posY, int cartridges, int range) {
+        super(name, hp, maxHp, attack, minDamage, maxDamage, protection, speed, posX, posY);
         this.cartridges = cartridges;
         this.range = range;
     }
 
-    @Override
-    public void step() {
-        int cart = getCartridges();
-        if (cart > 0) {
-            setCartridges(cart-1);
+    public boolean findFarmer(ArrayList<Human> team) {
+        ArrayList<Human> arrayFarmers = new ArrayList<>();
+        for (Human pers : team) {
+            if (pers.getInfo().toString().contains("Ф")
+                    && ((Farmer) pers).getArrows() > 0) {
+                arrayFarmers.add(pers);
+            }
+        }
+        if (arrayFarmers.size() == 0) {
+            return false;
+        } else if (arrayFarmers.size() == 1) {
+            ((Farmer) arrayFarmers.get(0)).setArrows(0);
+            return true;
+        } else {
+            ((Farmer) findNearest(arrayFarmers)).setArrows(0);
+            return true;
         }
     }
 
-    public int getCartridges() {
-        return this.cartridges;
+    public void step(ArrayList<Human> ourTeam, ArrayList<Human> notOurTeam) {
+        if (hp > 0) {
+            if (cartridges > 0) {
+                makeDamage(findNearest(notOurTeam));
+                if (findFarmer(ourTeam)) {
+                    return;
+                }
+                cartridges--;
+            }
+        }
     }
 
-    public void setCartridges(int cartridges) {
-        this.cartridges = cartridges;
-    }
 }

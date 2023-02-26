@@ -1,21 +1,16 @@
 package Unit;
 
+import java.util.ArrayList;
+
 public class Bandit extends Infantry{
 
     int disguise;
 
-    public Bandit(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage, Integer protection, int disguise) {
-        super(name, hp, maxHp, attack, minDamage, maxDamage, protection);
-        this.disguise = disguise;
-    }
-
-    public Bandit(String name) {
-        super(name, 15.1f, 15, 7, 5, 3, 6);
+    public Bandit(String name, Vector2D position) {
+        super(name, 50f, 50, 10, 2,6 , 7,6, position.posX, position.posY);
         this.disguise = 15;
     }
 
-    public void steal(Shooter Shooter){
-    }
 
     @Override
     public StringBuilder getInfo() {
@@ -30,4 +25,5 @@ public class Bandit extends Infantry{
     public void step() {
 
     }
+
 }

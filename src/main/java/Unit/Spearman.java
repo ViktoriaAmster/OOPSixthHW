@@ -1,11 +1,8 @@
 package Unit;
 
 public class Spearman extends Infantry{
-    public Spearman(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage, Integer protection) {
-        super(name, hp, maxHp, attack, minDamage, maxDamage, protection);
-    }
-
-    public Spearman(String name) { super(name, 20.1f,20,10, 9,5, 7); }
+    public Spearman(String name, Vector2D position) {
+        super(name, 20f,20,10, 9,15, 5,4, position.posX, position.posY);}
 
     public void runAway() {    }
 

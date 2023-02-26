@@ -2,19 +2,9 @@ package Unit;
 
 public class Sniper extends Shooter{
 
-    public Sniper(String name) {
-        super(name, 150.1f, 150, 10, 10, 5, 3, 4,
-                10, 5);
-    }
-
-    public Sniper(String name, Float hp, Integer maxHp, Integer attack, Integer minDamage, Integer maxDamage,
-                  Integer protection, Integer speed, int cartridges, int range) {
-        super(name, hp, maxHp, attack, minDamage, maxDamage, protection, speed, cartridges, range);
-    }
-
-    @Override
-    public Integer getAttack() {
-        return attack;
+    public Sniper(String name, Vector2D position) {
+        super(name, 100f, 100, 10, 10, 20, 3, 4,
+               position.posX, position.posY, 5, 5);
     }
 
     @Override
@@ -23,6 +13,12 @@ public class Sniper extends Shooter{
         return builder.append("Снайпер: \t").append(Sniper.super.name)
                 .append("\t ATK: \t").append(Sniper.super.attack)
                 .append("\t HP: \t").append(Sniper.super.hp)
-                .append("\t Arrows: ").append(Sniper.super.cartridges);
+                .append("\t Arrows: ").append(Sniper.super.cartridges)
+                .append("\t Speed: \t").append(Sniper.super.speed);
+    }
+
+    @Override
+    public void step() {
+
     }
 }
