@@ -15,10 +15,11 @@ public class Bandit extends Infantry{
     @Override
     public StringBuilder getInfo() {
         StringBuilder builder = new StringBuilder();
-        return builder.append("Бандит: \t").append(Bandit.super.name)
-                .append("\t ATK: \t").append(Bandit.super.attack)
-                .append("\t HP: \t").append(Bandit.super.hp)
-                .append("\t Speed: \t").append(Bandit.super.speed);
+        return builder.append("Бандит: \t").append(name)
+                .append("\t HP: \t").append(hp)
+                .append("\t State: \t").append(state)
+                .append(" \t|\t|")
+                .append("\t|");
     }
 
     @Override

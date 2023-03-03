@@ -1,20 +1,14 @@
-package main;
-
 import Unit.*;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
 import java.util.Scanner;
-
 public class main {
-
     static final int UNITS = 10;
+    public static ArrayList<Human> lightSide = new ArrayList<>();
+    public static ArrayList<Human> darkSide = new ArrayList<>();
+    public static ArrayList<Human> teams = new ArrayList<>();
     public static void main(String[] args) {
-
-        ArrayList<Human> lightSide = new ArrayList<>();
-        ArrayList<Human> darkSide = new ArrayList<>();
-        ArrayList<Human> teams = new ArrayList<>();
         Scanner user_input = new Scanner(System.in);
         createTeam(lightSide, 0, 4, 1);
         createTeam(darkSide, 3, 7, 10);
@@ -26,7 +20,8 @@ public class main {
             sortTeam(lightSide);
             sortTeam(darkSide);
             sortTeam(teams);
-            gameInfo(lightSide,darkSide);
+            View.view();
+            user_input.nextLine();
             if (Human.findLive(lightSide).size() == 0){
                 System.out.println("Победила команда DarkSide");
                 return;
@@ -39,24 +34,8 @@ public class main {
                         pers.step(Human.findLive(lightSide),Human.findLive(darkSide));
                     }else {pers.step(Human.findLive(darkSide),Human.findLive(lightSide));}
                 }
-                user_input.nextLine();
             }
         }
-    }
-
-    public static void gameInfo (ArrayList<Human> team1, ArrayList<Human> team2) {
-        for (int i = 0; i < team1.size(); i++) {
-            System.out.println(team1.get(i).getInfo());
-        }
-        System.out.println();
-        for (int i = 0; i < team2.size(); i++) {
-            System.out.println(team2.get(i).getInfo());
-        }
-        System.out.println();
-//            for (int i = 0; i < teams.size(); i++) {
-//                System.out.println(teams.get(i).getInfo());
-//            }
-//            System.out.println();
     }
     public static void createTeam(ArrayList targetList, int start, int end, int posY) {
 

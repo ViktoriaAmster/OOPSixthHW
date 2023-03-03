@@ -7,7 +7,11 @@ public enum Names {
         Kate,
         Dima,
         Vika,
-        Oleg
+        Oleg,
+        Inna,
+        Kira,
+        Mark,
+        Tima
         ;
 
         private Names() {

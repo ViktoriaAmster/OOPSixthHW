@@ -1,7 +1,5 @@
 package Unit;
 
-import java.util.ArrayList;
-
 public class Farmer extends Human{
     protected int arrows;
     public Farmer(String name,Vector2D position) {
@@ -15,14 +13,18 @@ public class Farmer extends Human{
     @Override
     public StringBuilder getInfo() {
         StringBuilder builder = new StringBuilder();
-        return builder.append("Фермер: \t").append(Farmer.super.name)
-                .append("\t ATK: \t").append(Farmer.super.attack)
-                .append("\t HP: \t").append(Farmer.super.hp)
-                .append("\t Speed: \t").append(Farmer.super.speed);
+        return builder.append("Фермер: \t").append(name)
+                .append("\t HP: \t").append(hp)
+                .append("\t State: \t").append(state)
+                .append(" \t|\t|")
+                .append("\t|");
     }
 
     @Override
     public void step() {
+        if (arrows == 0){
+            arrows += 1;
+        }
 
     }
 

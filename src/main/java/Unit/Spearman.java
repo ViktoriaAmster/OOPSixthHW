@@ -9,10 +9,11 @@ public class Spearman extends Infantry{
     @Override
     public StringBuilder getInfo() {
         StringBuilder builder = new StringBuilder();
-        return builder.append("Копейщик: \t").append(Spearman.super.name)
-                .append("\t ATK: \t").append(Spearman.super.attack)
-                .append("\t HP: \t").append(Spearman.super.hp)
-                .append("\t Speed: \t").append(Spearman.super.speed);
+        return builder.append("Копейщик: \t").append(name)
+                .append("\t HP: \t").append(hp)
+                .append("\t State: \t").append(state)
+                .append(" \t|\t|")
+                .append("\t|");
     }
 
     @Override

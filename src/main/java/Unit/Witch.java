@@ -14,11 +14,12 @@ public class Witch extends Magic {
     @Override
     public StringBuilder getInfo() {
         StringBuilder builder = new StringBuilder();
-        return builder.append("Колдун: \t").append(Witch.super.name)
-                .append("\t ATK: \t").append(Witch.super.attack)
-                .append("\t HP: \t").append(Witch.super.hp)
-                .append("\t MP: \t").append(Witch.super.mana)
-                .append("\t Speed: \t").append(Witch.super.speed);
+        return builder.append("Колдун: \t").append(name)
+                .append("\t HP: \t").append(hp)
+                .append("\t MP: \t").append(mana)
+                .append("\t State: \t").append(state)
+                .append("\t|")
+                .append("\t|");
     }
 
     public void step(ArrayList<Human> ourTeam, ArrayList<Human> notOurTeam) {}
